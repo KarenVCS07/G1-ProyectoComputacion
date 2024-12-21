@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,32 +32,34 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Inicio</a>
+                            <a class="nav-link" href="index.php">Inicio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="productos.html">Productos</a>
+                            <a class="nav-link" href="catalogo.php">Catalogo</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="ofertas.html">Ofertas</a>
+                            <a class="nav-link" href="nosotros.php">Nosotros</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="nosotros.html">Nosotros</a>
+                            <a class="nav-link" href="soporte.php">Soporte</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="soporte.html">Soporte</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="condiciones.html">Terminos y Condiciones</a>
+                            <a class="nav-link" href="condiciones.php">Terminos y Condiciones</a>
                         </li>
                     </ul>
 
                     <!-- Botones de inicio de sesión y registro pegados a la derecha -->
                     <div class="ml-auto">
-                      
-                        <a href="login.html" class="btn btn-outline-primary mr-2">Iniciar sesión</a>
-                        <a href="registro.html" class="btn btn-primary">Registrarse</a>
-                        <a href="cuenta.html" class="btn btn-outline-primary mr-2">Mi cuenta</a>
-
+                    <?php if (isset($_SESSION['user_id'])): ?>
+                            <a href="carrito.php" class="btn btn-outline-secondary mr-3">Mi Carrito</a>
+                            <?php if (isset($_SESSION['user_type']) && $_SESSION['user_type'] === 'admin'): ?>
+                            <a href="paneladm.php" class="btn btn-outline-primary mr-2">Admin</a>
+                        <?php endif; ?>
+                            <a href="logout.php" class="btn btn-outline-danger">Cerrar Sesión</a>
+                        <?php else: ?>
+                            <a href="login.php" class="btn btn-outline-primary mr-2">Iniciar sesión</a>
+                            <a href="registro.php" class="btn btn-primary">Registrarse</a>
+                        <?php endif; ?>
                     </div>
 
 
