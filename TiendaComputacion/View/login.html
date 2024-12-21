@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <!-- Nombre de la empresa pegado a la izquierda -->
+                <a class="navbar-brand font-weight-bold text-white" href="index.html">Bienvenido a Empresa X</a>
+    
+                <!-- Botón para dispositivos móviles -->
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+
+<section class="bg-light d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-sm" style="width: 100%; max-width: 400px;">
+        <h1 class="text-center mb-4">Iniciar Sesión</h1>
+        <form action="/login" method="post">
+            <div class="mb-3">
+                <label for="username" class="form-label">Usuario</label>
+                <input type="text" id="username" name="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Contraseña</label>
+                <input type="password" id="password" name="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Entrar</button>
+        </form>
+        <div class="text-center mt-3">
+            <p class="mb-0">¿No tienes una cuenta? <a href="registro.html" class="text-decoration-none">Regístrate aquí</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</section>
+
+ <!-- Footer -->
+ <footer class="bg-dark text-white py-4 mt-5">
+    <div class="container text-center">
+        <p>&copy; Empresa X, Derechos Reservados 2024</p>
+        <div class="my-3">
+            <!-- Íconos de redes sociales -->
+            <a href="#" class="text-white mx-2" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" class="text-white mx-2" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" class="text-white mx-2" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p class="mb-0">Teléfono: +506 4567 7890 | Correo: contacto@empresa.com</p>
+    </div>
+</footer>
+</body>
+</html>
